@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Create Product Page</title>
+    {% load static %}
+<link  href ="{% static 'src/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div class="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
+        Product Form
+    </div>
+
+
+<form action="{% url 'create' %}" method="POST" class="py-4 px-6" >
+    {% csrf_token %}
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="name">
+                Title
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name" type="text" name="title" placeholder="Enter title">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="email">
+                Price
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="price" type="number" name="price" placeholder="Enter price">
+        </div>
+       
+        
+        
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="service">
+                Category
+            </label>
+            <select
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="service" name="category">
+                <option value="">Select a category</option>
+                <option value="electronic">electronic</option>
+                <option value="clothes">clothes</option>
+                <option value="housing">housing</option>
+                <option value="food">food</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="message">
+                Description
+            </label>
+            <textarea
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="message" name="description" rows="4" placeholder="Enter any additional information"></textarea>
+        </div>
+        <div class="flex items-center justify-center mb-4">
+            <button
+                class="bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+                type="submit">
+                Submit
+            </button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

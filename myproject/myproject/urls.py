@@ -19,7 +19,7 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('project/',include('myapp.urls'))
+    path('',include('myapp.urls'))
 ]
 
 # http://lunarit/project/login/
